@@ -1,2 +1,4 @@
-# React-login
-login example
+# React-native login
+
+Login example from a tutorial
+
