@@ -1,27 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { Component } from 'react';
+import { 
+  StyleSheet,
+   Text,
+    View,
+     Button, 
+     TextInput,
+     StatusBar, 
+     ScrollView,
+     
+    } from 'react-native';
 
-var test = "lol";
-var cpt = 1;
+// import 'react-native-gesture-handler';
+// import {NavigationContainer} from '@react-navigation/native';
+import {StackNavigator} from '@react-navigation/stack';
 
+import Login from './src/pages/Login';
+import Signup from './src/pages/Signup';
+import Routes from './src/Routes';
 
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!FUCK</Text>
+export default class App extends Component{
+  render(){
+    return(
       
-      <Button title={test} onPress={()=> {console.log(cpt++)}}/>
-      <Text>{cpt}</Text>
-    </View>
-  );
+      <Routes />
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'lime',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
+
