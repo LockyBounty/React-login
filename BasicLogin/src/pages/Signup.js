@@ -18,8 +18,8 @@ import {Actions} from 'react-native-router-flux';
 export default class Signup extends Component{
     //Actions (package flux) permet de relier les pages entre-elles 
     // on peut utiliser Actions.pop() pour retour en arriere
-    login(){
-        Actions.login(); 
+    goBack(){
+        Actions.pop(); 
     }
     render(){
         return(
@@ -28,7 +28,7 @@ export default class Signup extends Component{
                 <Form type='Signup'/>{/* Ce qui va apparaitre sur le bouton* */}
                 <View style={styles.signup}>
                     <Text style={styles.signupText}>Already have an account? </Text>
-                     <TouchableOpacity onPress={()=> this.login()}>
+                     <TouchableOpacity onPress={()=> this.goBack()}>
                         <Text style={styles.signupText2}>Login</Text>
                     </TouchableOpacity>
                     
