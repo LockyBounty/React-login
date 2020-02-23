@@ -10,19 +10,27 @@ import {
      
     } from 'react-native';
 
-// import 'react-native-gesture-handler';
-// import {NavigationContainer} from '@react-navigation/native';
-import {StackNavigator} from '@react-navigation/stack';
 
-import Login from './src/pages/Login';
-import Signup from './src/pages/Signup';
-import Routes from './src/Routes';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/es/integration/react';
 
+import Main from './src/Main';
+import persist from './src/config/store';
+
+
+
+const persisStore = persist();
+
+//on wrap le contenu à l'interieur de Provider de Redux, et y ajouter 
+// la prop store du fichier store
 export default class App extends Component{
   render(){
     return(
-      
-      <Routes />
+      <Provider store={persisStore.store}>
+        <PersistGate loading={null} persistor={persisStore.persistor}>
+           <Main />
+        </PersistGate>
+      </Provider>
     )
   }
 }

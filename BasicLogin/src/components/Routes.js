@@ -11,8 +11,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContext } from '@react-navigation/native';
 
 
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 
 //Exemple avec react-native-router-flux
